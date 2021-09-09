@@ -6,33 +6,48 @@
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-body {background-color:#333333;color:#f2f2f2;font-family: "Lato", sans-serif;margin-right:100px;line-height:200%}
+body {background-color:#333333;color:#f2f2f2;font-family: "Lato", sans-serif;line-height:200%}
 .mySlides {display: none}
+
 </style>
 <body>
 
+ 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-darkgrey w3-text-white w3-animate-left" style="z-index:3;width:350px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-    <!--img src="/w3images/avatar_g2.jpg" style="width:45%;" class="w3-round"--><br><br>
-    <h1><b>Yueran Wang</b></h1>
+<nav class="w3-sidebar w3-collapse w3-darkgrey w3-text-white w3-bar-block" style="z-index:3;width:300px;" id="mySidebar">
+  <div class="w3-container" >
+    <!--img src="/w3images/avatar_g2.jpg" style="width:45%;" class="w3-round"-->
+    <h1 style="margin-top:100px"><b>Yueran Wang</b></h1>
     <p class="w3-main">yue-ran.wang@outlook.com</p>
   </div>
-  <div class="w3-bar-block">
-    <a href="index.html#Biography" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa-fw w3-margin-right"></i>Biography</a> 
-    <a href="index.html#Curriculum Vitae" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa-fw w3-margin-right"></i>Curriculum Vitae</a>
-    <a href="index.html#Research Projects" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa-fw w3-margin-right"></i>Research Projects</a> 
-    <a href="index.html#Innovation Projects" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa-fw w3-margin-right"></i>Innovation Projects</a>
+  <div class="w3-padding-64 w3-bar-block w3-large">
+    <a href="#Biography" class="w3-bar-item w3-button">Biography</a> 
+    <a href="#Curriculum Vitae" class="w3-bar-item w3-button">Curriculum Vitae</a>
+    <a href="#Research Projects" class="w3-bar-item w3-button">Research Projects</a> 
+    <a href="#Innovation Projects" class="w3-bar-item w3-button">Innovation Projects</a>
     
     
-    <a href="#Dissertations" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa-fw w3-margin-right"></i>Dissertations</a>
-    <a href="#Publications" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa-fw w3-margin-right"></i>Publications</a>
+    <a href="#Dissertations" class="w3-bar-item w3-button">Dissertations</a>
+    <a href="#Publications" class="w3-bar-item w3-button">Publications</a>
   </div>
+
 </nav>
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24">Yueran Wang's Homepage</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right"  style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
+  </div>
+</header>
+  
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<div class="w3-main" style="margin-left:450px;margin-right:250px;">
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+
 
 <div class="w3-main" style="margin-left:400px">
   <div class="w3-hide-large" style="margin-top:83px"></div>
@@ -40,3 +55,15 @@ body {background-color:#333333;color:#f2f2f2;font-family: "Lato", sans-serif;mar
   <iframe src="./YueranWang'sCV0906.pdf" width="100%" height="700"></iframe>
   
 </div>
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
